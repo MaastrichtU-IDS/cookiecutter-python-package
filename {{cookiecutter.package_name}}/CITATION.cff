@@ -7,6 +7,6 @@ authors:
     # affiliation: Institute of Data Science, Maastricht University
 title: "{{cookiecutter.package_name_stylized}}"
 repository-code: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}
-date-released: {{date.today().year}}
+date-released: {% now 'local', '%Y-%m-%d' %}
 url: https://pypi.org/project/{{cookiecutter.package_slug}}
 # doi: 10.48550/arXiv.2206.13787
