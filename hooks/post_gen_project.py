@@ -4,6 +4,7 @@
 
 import os
 import pathlib
+import shutil
 
 PROJECT_DIRECTORY = pathlib.Path(os.path.realpath(os.path.curdir)).resolve()
 PACKAGE = PROJECT_DIRECTORY.joinpath("src", "{{ cookiecutter.package_name }}")
@@ -15,4 +16,4 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.documentation_website|lower }}' == "false":
         PROJECT_DIRECTORY.joinpath("mkdocs.yml").unlink()
-        DOCS.unlink()
+        shutil.rmtree(DOCS)
