@@ -41,10 +41,12 @@ autoflake = "^1.3.1"
 flake8 = "^3.7.9"
 pytest = "^6.2.5"
 pytest-cov = "^2.8.1"
+{% if cookiecutter.documentation_website|lower != "false" %}
 # Dependencies for docs are also in docs/requirements.txt for the GitHub Action to publish-docs
 jinja2= "3.0.3"
 mkdocstrings = {extras = ["python"], version = "^0.19.0"}
 mkdocs-material = "^8.2.7"
+{% endif %}
 
 
 [tool.poetry.urls]
