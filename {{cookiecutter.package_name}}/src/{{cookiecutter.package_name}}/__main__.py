@@ -14,7 +14,7 @@ GREEN = '\033[32m'
 @cli.command("hello")
 def cli_hello(
     name: str = typer.Argument("World", help="Who to greet"),
-    output: str = typer.Option(help="Path to the output file"),
+    output: str = typer.Option(None, help="Path to the output file"),
     verbose: bool = typer.Option(True, help="Display logs")
 ):
     api = Api()

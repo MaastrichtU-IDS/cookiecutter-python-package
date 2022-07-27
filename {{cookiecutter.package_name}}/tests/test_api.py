@@ -1,10 +1,10 @@
-from {{cookiecutter.package_name}} import API
+from {{cookiecutter.package_name}} import Api
 from {{cookiecutter.package_name}}.version import get_version
 
 
 def test_api():
     """Test the package main function"""
-    api = API()
+    api = Api()
     assert api.get_hello_world("test") == "Hello test"
 
 
