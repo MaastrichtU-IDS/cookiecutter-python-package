@@ -113,6 +113,8 @@ Run the library with the CLI:
 poetry run {{cookiecutter.package_slug}} --help
 ```
 
+### Test
+
 Run the tests locally:
 
 ```bash
@@ -133,6 +135,17 @@ Or you can do it directly with the CLI (e.g. for `pandas` here):
 poetry add pandas
 ```
 
+### Generate docs
+
+The documentation is automatically generated from the markdown files in the `docs` folder and python docstring comments, and published by a GitHub Actions workflow.
+
+Start the docs on [http://localhost:8001](http://localhost:8001){:target="_blank"}
+
+```bash
+poetry run mkdocs serve -a localhost:8001
+```
+
+
 ### Build and publish
 
 Build:
@@ -145,17 +158,6 @@ Publishing a new release is automatically done by a GitHub Action workflow when 
 
 ```bash
 poetry publish
-```
-
-
-### Generate docs
-
-The documentation is automatically generated from the markdown files in the `docs` folder and python docstring comments, and published by a GitHub Actions workflow.
-
-Start the docs on [http://localhost:8001](http://localhost:8001){:target="_blank"}
-
-```bash
-poetry run mkdocs serve -a localhost:8001
 ```
 
 

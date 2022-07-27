@@ -53,7 +53,7 @@ nav:
     - Usage: usage.md
     - Development: development.md
   - Code reference:
-      - "<span><i class='fa-solid fa-flask'></i>&nbsp;&nbsp;API</span>": API.md
+      - "<span><i class='fa-solid fa-flask'></i>&nbsp;&nbsp;Api</span>": Api.md
       # - "<span><i class='fa-solid fa-vial-circle-check'></i>&nbsp;&nbsp;FairTestEvaluation</span>": FairTestEvaluation.md
       # - "<span><i class='fa-solid fa-flask-vial'></i>&nbsp;&nbsp;FairTestAPI</span>": FairTestAPI.md
   - "<span>Issues&nbsp;&nbsp;<i class='fa-solid fa-arrow-up-right-from-square'></i></span>": https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/issues" target="_blank

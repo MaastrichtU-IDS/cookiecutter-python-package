@@ -1,5 +1,5 @@
 import typer
-from {{cookiecutter.package_name}}.api import API
+from {{cookiecutter.package_name}}.api import Api
 from {{cookiecutter.package_name}}.version import get_version
 
 cli = typer.Typer()
@@ -17,11 +17,12 @@ def cli_hello(
     output: str = typer.Option(help="Path to the output file"),
     verbose: bool = typer.Option(True, help="Display logs")
 ):
-    print(f"Hello {name}")
+    api = Api()
+    print(api.get_hello_world(name))
     if (output):
         if verbose: print(f'Writing to file {BOLD}{GREEN}{output}{END}')
         with open(output, "w") as file:
-            file.write(f"Hello {name}")
+            file.write(api.get_hello_world(name))
 
 
 
