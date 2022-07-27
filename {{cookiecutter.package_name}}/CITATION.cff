@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - orcid: {{cookiecutter.author_orcid}}
+    email: {{cookiecutter.author_email}}
+    given-names: {{cookiecutter.author_name}}
+    # affiliation: Institute of Data Science, Maastricht University
+title: "{{cookiecutter.package_name_stylized}}"
+repository-code: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}
+date-released: {{date.today().year}}
+url: https://pypi.org/project/{{cookiecutter.package_slug}}
+# doi: 10.48550/arXiv.2206.13787

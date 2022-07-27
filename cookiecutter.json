@@ -1,0 +1,11 @@
+{
+    "package_name": "my_package",
+    "package_slug": "{{ cookiecutter.package_name.replace('_', '-') }}",
+    "github_organization_name": "your-org-or-username",
+    "package_name_stylized": "{{ cookiecutter.package_name.replace('_', ' ').capitalize() }}",
+    "short_description": "A nice python package",
+    "author_name": "Firstname Lastname",
+    "author_email": "email@example.com",
+    "author_orcid": "https://orcid.org/0000-0000-0000-0000",
+    "command_line_interface": true
+}
