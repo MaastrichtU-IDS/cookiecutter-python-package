@@ -5,7 +5,7 @@ site_url: https://{{cookiecutter.github_organization_name.lower()}}.github.io/{{
 repo_name: {{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}
 repo_url: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}
 edit_uri: "edit/main/docs/"
-copyright: Copyright &copy; {{date.today().year}} {{cookiecutter.author_name}}
+copyright: Copyright &copy; {% now 'local', '%Y' %} {{cookiecutter.author_name}}
 
 theme:
   name: "material"
