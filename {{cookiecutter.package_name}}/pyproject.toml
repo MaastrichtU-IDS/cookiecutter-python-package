@@ -19,16 +19,14 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-
 {% if cookiecutter.command_line_interface|lower != "false" %}
+
 [tool.poetry.scripts]
-{{cookiecutter.package_slug}} = "{{cookiecutter.package_name}}.__main__:cli"
-{% endif %}
+{{cookiecutter.package_slug}} = "{{cookiecutter.package_name}}.__main__:cli"{% endif %}
 
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.11"
-{% if cookiecutter.command_line_interface|lower != "false" %}
+python = ">=3.8,<3.11"{% if cookiecutter.command_line_interface|lower != "false" %}
 typer = "^0.6.0"
 {% endif %}
 
