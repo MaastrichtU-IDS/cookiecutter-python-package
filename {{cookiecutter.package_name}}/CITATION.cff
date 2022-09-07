@@ -6,7 +6,7 @@ authors:
     given-names: {{cookiecutter.author_name}}
     # affiliation: Institute of Data Science, Maastricht University
 title: "{{cookiecutter.package_name_stylized}}"
-repository-code: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}
+repository-code: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}
 date-released: {% now 'local', '%Y-%m-%d' %}
-url: https://pypi.org/project/{{cookiecutter.package_slug}}
+url: https://pypi.org/project/{{cookiecutter.package_name}}
 # doi: 10.48550/arXiv.2206.13787

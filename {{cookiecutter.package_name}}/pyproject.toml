@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "{{cookiecutter.package_slug}}"
+name = "{{cookiecutter.package_name}}"
 version = "0.0.1"
 description = "{{cookiecutter.short_description}}"
 authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
 readme = "README.md"
 license = "MIT"
-homepage = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}"
-repository = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}"
+homepage = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}"
+repository = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}"
 keywords = [  ]
 include = [
     "LICENSE",
@@ -22,7 +22,7 @@ classifiers = [
 {% if cookiecutter.command_line_interface|lower != "false" %}
 
 [tool.poetry.scripts]
-{{cookiecutter.package_slug}} = "{{cookiecutter.package_name}}.__main__:cli"{% endif %}
+{{cookiecutter.package_name}} = "{{cookiecutter.module_name}}.__main__:cli"{% endif %}
 
 
 [tool.poetry.dependencies]
@@ -48,7 +48,7 @@ mkdocs-material = "^8.2.7"
 
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/issues"
+"Bug Tracker" = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/issues"
 
 
 [build-system]

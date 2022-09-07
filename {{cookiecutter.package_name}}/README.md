@@ -3,11 +3,11 @@
 </h1>
 
 <p align="center">
-    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/test.yml">
-        <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/test.yml/badge.svg" />
+    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml">
+        <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg" />
     </a>
-    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish.yml">
-        <img alt="Publish" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish.yml/badge.svg" />
+    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml">
+        <img alt="Publish" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg" />
     </a>
     <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.package_name}}" />
@@ -15,16 +15,16 @@
     <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
         <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}" />
     </a>
-    <!-- <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/blob/main/LICENSE">
+    <!-- <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/blob/main/LICENSE">
         <img alt="PyPI - License" src="https://img.shields.io/pypi/l/{{cookiecutter.package_name}}" />
     </a> -->
     <!-- <a href='https://{{cookiecutter.package_name}}.readthedocs.io/en/latest/?badge=latest'>
         <img src='https://readthedocs.org/projects/{{cookiecutter.package_name}}/badge/?version=latest' alt='Documentation Status' />
     </a> -->
-    <!--a href="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/branch/main">
-        <img src="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/branch/main/graph/badge.svg" alt="Codecov status" />
+    <!--a href="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/branch/main">
+        <img src="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/branch/main/graph/badge.svg" alt="Codecov status" />
     </a> 
-    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/blob/main/.github/CODE_OF_CONDUCT.md">
+    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/blob/main/.github/CODE_OF_CONDUCT.md">
         <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant"/>
     </a-->
 </p>
@@ -36,23 +36,23 @@
 You will need Python >=3.8+ and <3.10
 
 ```shell
-pip install {{cookiecutter.package_slug}}
+pip install {{cookiecutter.package_name}}
 ```
 
 ## 🪄 Usage
 
 ### ⌨️ Use as a command-line interface
 
-You can easily use your package from your terminal after installing `{{cookiecutter.package_slug}}` with pip:
+You can easily use your package from your terminal after installing `{{cookiecutter.package_name}}` with pip:
 
 ```bash
-{{cookiecutter.package_slug}}
+{{cookiecutter.package_name}}
 ```
 
 Get a full rundown of the available options with:
 
 ```bash
-{{cookiecutter.package_slug}} --help
+{{cookiecutter.package_name}} --help
 ```
 
 ### 🐍 Use with python 
@@ -62,7 +62,7 @@ This library can also be used directly in python scripts
 If your input is tabular data (e.g., csv):
 
  ```python
-import {{cookiecutter.package_name}}
+import {{cookiecutter.module_name}}
 
 # TODO: add example to use your package
  ```
@@ -95,8 +95,8 @@ poetry env use $(which python)
 Clone the repository:
 
 ```bash
-git clone https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}
-cd {{cookiecutter.package_slug}}
+git clone https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}
+cd {{cookiecutter.package_name}}
 ```
 
 Install the dependencies:
@@ -110,7 +110,7 @@ poetry install
 Run the library with the CLI:
 
 ```bash
-poetry run {{cookiecutter.package_slug}} --help
+poetry run {{cookiecutter.package_name}} --help
 ```
 
 ### Test

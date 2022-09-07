@@ -1,6 +1,6 @@
 import typer
-from {{cookiecutter.package_name}}.api import Api
-from {{cookiecutter.package_name}}.version import get_version
+from {{cookiecutter.module_name}}.api import Api
+from {{cookiecutter.module_name}}.version import get_version
 
 cli = typer.Typer()
 

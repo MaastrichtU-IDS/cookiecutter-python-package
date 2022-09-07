@@ -1,7 +1,7 @@
 {
-    "package_name": "my_package",
-    "package_slug": "{{ cookiecutter.package_name.replace('_', '-') }}",
-    "package_name_stylized": "{{ cookiecutter.package_name.replace('_', ' ').capitalize() }}",
+    "module_name": "my_package",
+    "package_name": "{{ cookiecutter.module_name.replace('_', '-') }}",
+    "package_name_stylized": "{{ cookiecutter.module_name.replace('_', ' ').capitalize() }}",
     "short_description": "A nice python package",
     "github_organization_name": "your-org-or-username",
     "author_name": "Firstname Lastname",

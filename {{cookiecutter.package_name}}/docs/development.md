@@ -1,16 +1,16 @@
-[![Version](https://img.shields.io/pypi/v/{{cookiecutter.package_slug}})](https://pypi.org/project/{{cookiecutter.package_slug}}) [![Python versions](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_slug}})](https://pypi.org/project/{{cookiecutter.package_slug}}) [![Pull requests welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/fork)
+[![Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Python versions](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Pull requests welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/fork)
 
-[![Run tests](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/tests.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/tests.yml) [![CodeQL](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/codeql-analysis.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization_name}}_{{cookiecutter.package_slug}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization_name}}_{{cookiecutter.package_slug}})
+[![Run tests](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml) [![CodeQL](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization_name}}_{{cookiecutter.package_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization_name}}_{{cookiecutter.package_name}})
 
-[![Publish to PyPI](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish.yml) [![Publish docs](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish-docs.yml)
+[![Publish to PyPI](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml) [![Publish docs](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish-docs.yml)
 
 ### 📥 Install for development
 
 Clone the repository and install the dependencies locally for development:
 
 ```bash
-git clone https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}
-cd {{cookiecutter.package_slug}}
+git clone https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}
+cd {{cookiecutter.package_name}}
 pip install -e .
 ```
 
@@ -31,7 +31,7 @@ pip install -e .
 
 ### ✅ Run the tests
 
-[![Run tests](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/tests.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/tests.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization_name}}_{{cookiecutter.package_slug}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization_name}}_{{cookiecutter.package_slug}})
+[![Run tests](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization_name}}_{{cookiecutter.package_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization_name}}_{{cookiecutter.package_name}})
 
 Tests are automatically run by a GitHub Actions workflow when new code is pushed to the GitHub repository. The subject URLs to test and their expected score are retrieved from the `test_test` attribute for each metric test.
 
@@ -77,7 +77,7 @@ pytest -s --metric a1-metadata-protocol
 
 ### 📖 Generate docs
 
-[![Publish docs](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish-docs.yml)
+[![Publish docs](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish-docs.yml)
 
 The documentation (this website) is automatically generated from the markdown files in the `docs` folder and python docstring comments, and published by a GitHub Actions workflow.
 
@@ -95,7 +95,7 @@ mkdocs serve -a localhost:8001
 
 ### 🏷️ Publish a new release
 
-[![Publish to PyPI](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/actions/workflows/publish.yml)
+[![Publish to PyPI](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml)
 
 1. Increment the version in `setup.py`
 2. Push to GitHub

@@ -1,3 +1,3 @@
 # Api
 
-::: {{cookiecutter.package_name}}.Api
+::: {{cookiecutter.module_name}}.Api

@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-"""Tests for :mod:`{{cookiecutter.package_name}}`."""
+"""Tests for :mod:`{{cookiecutter.module_name}}`."""

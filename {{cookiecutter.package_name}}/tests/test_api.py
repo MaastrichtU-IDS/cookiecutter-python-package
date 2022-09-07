@@ -1,5 +1,5 @@
-from {{cookiecutter.package_name}} import Api
-from {{cookiecutter.package_name}}.version import get_version
+from {{cookiecutter.module_name}} import Api
+from {{cookiecutter.module_name}}.version import get_version
 
 
 def test_api():

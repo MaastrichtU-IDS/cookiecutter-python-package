@@ -1,11 +1,11 @@
-This page explains how to create a FAIR metrics test API with `{{cookiecutter.package_slug}}`.
+This page explains how to create a FAIR metrics test API with `{{cookiecutter.package_name}}`.
 
 ## 📥 Install the package
 
-Install the package from [PyPI](https://pypi.org/project/{{cookiecutter.package_slug}}/){:target="_blank"}:
+Install the package from [PyPI](https://pypi.org/project/{{cookiecutter.package_name}}/){:target="_blank"}:
 
 ```bash
-pip install {{cookiecutter.package_slug}}
+pip install {{cookiecutter.package_name}}
 ```
 
 
@@ -14,7 +14,7 @@ pip install {{cookiecutter.package_slug}}
 Create a `main.py` file to declare the API, you can provide a different folder than `metrics` here, the folder path is relative to where you start the API (the root of the repository):
 
 ```python title="main.py"
-from {{cookiecutter.package_name}} import API
+from {{cookiecutter.module_name}} import API
 
 api = API()
 print(api.get_hello_world())
@@ -66,7 +66,7 @@ DEFAULT_SUBJECT="https://doi.org/10.1594/PANGAEA.908011"
 Create a `a1_check_something.py` file in the `metrics` folder with your test:
 
 ````python title="metrics/a1_check_something.py"
-from {{cookiecutter.package_name}} import FairTest, FairTestEvaluation
+from {{cookiecutter.module_name}} import FairTest, FairTestEvaluation
 
 class MetricTest(FairTest):
     metric_path = 'a1-check-something'
@@ -130,11 +130,11 @@ g = eval.parse_rdf(text,
 return eval.response()
 ```
 
-* There is also a dictionary `test_test` to define URIs to be automatically tested against each metric, and the expected score. See the [Development](/{{cookiecutter.package_slug}}/development) section for more detail on running the tests.
+* There is also a dictionary `test_test` to define URIs to be automatically tested against each metric, and the expected score. See the [Development](/{{cookiecutter.package_name}}/development) section for more detail on running the tests.
 
 !!! abstract "Documentation for all functions"
 
-    You can find the details for all functions available in the [Code reference](/{{cookiecutter.package_slug}}/FairTestEvaluation) section
+    You can find the details for all functions available in the [Code reference](/{{cookiecutter.package_name}}/FairTestEvaluation) section
 
 
 ## 🦄 Deploy the API
@@ -143,7 +143,7 @@ You can then run the metrics tests API using `uvicorn`.
 
 !!! example "Example"
 
-	For example you can get started with the code provided in the  [`example` folder](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_slug}}/tree/main/example){:target="_blank"}, check the `example/README.md` for more options, such as deploying it with docker.
+	For example you can get started with the code provided in the  [`example` folder](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/tree/main/example){:target="_blank"}, check the `example/README.md` for more options, such as deploying it with docker.
 
 Go to the FAIR metrics API folder, and install the requirements:
 

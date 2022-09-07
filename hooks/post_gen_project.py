@@ -7,7 +7,7 @@ import pathlib
 import shutil
 
 PROJECT_DIRECTORY = pathlib.Path(os.path.realpath(os.path.curdir)).resolve()
-PACKAGE = PROJECT_DIRECTORY.joinpath("src", "{{ cookiecutter.package_name }}")
+PACKAGE = PROJECT_DIRECTORY.joinpath("src", "{{ cookiecutter.module_name }}")
 DOCS = PROJECT_DIRECTORY.joinpath("docs")
 
 if __name__ == '__main__':
