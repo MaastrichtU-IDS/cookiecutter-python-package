@@ -1,10 +1,9 @@
-# Cookiecutter Snekpack
+# 🍪🐍 Cookiecutter for Python package
 
-A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new Python repositories.
+A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new Python package repositories.
 
 This template is different from [@audreyfeldroy](https://github.com/audreyfeldroy)'s
-[cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) because it uses the source
-layout and has lots of code quality assurance checks built in. If you're looking for something similar but not quite
+[cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) because it uses the `hatch` build backend, `mkdocs` for the documentation website, and `typer` for the optional CLI. If you're looking for something similar but not quite
 like this, try her package or see her [list of alternatives](https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#similar-cookiecutter-templates).
 
 

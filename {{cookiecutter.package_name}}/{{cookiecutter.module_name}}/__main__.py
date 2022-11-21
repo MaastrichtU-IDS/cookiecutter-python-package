@@ -1,6 +1,6 @@
 import typer
 from {{cookiecutter.module_name}}.api import Api
-from {{cookiecutter.module_name}}.version import get_version
+from {{cookiecutter.module_name}} import __version__
 
 cli = typer.Typer()
 
@@ -28,7 +28,7 @@ def cli_hello(
 
 @cli.command("version")
 def cli_version():
-    print(get_version())
+    print(__version__)
 
 
 if __name__ == "__main__":

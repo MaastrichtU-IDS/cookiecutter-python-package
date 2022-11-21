@@ -2,4 +2,4 @@
 
 set -e
 
-pytest --cov=src --cov-report=term-missing:skip-covered ${@}
+pytest --cov={{cookiecutter.module_name}} --cov-report=term-missing:skip-covered ${@}

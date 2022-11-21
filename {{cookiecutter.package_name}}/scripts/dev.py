@@ -1,5 +1,9 @@
 import logging
 
+from {{cookiecutter.module_name}} import __version__, Api
+
+
+# Setup logger
 log = logging.getLogger()
 log.setLevel(logging.INFO)
 console_handler = logging.StreamHandler()
@@ -9,5 +13,7 @@ formatter = logging.Formatter(
 console_handler.setFormatter(formatter)
 log.addHandler(console_handler)
 
+# Add code to test the lib in development
+api = Api()
+print(api.get_hello_world("test"))
 
-print("Add development code here")

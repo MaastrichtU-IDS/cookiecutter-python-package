@@ -16,13 +16,13 @@ theme:
   language: en
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
   palette:
-    - media: "(prefers-color-scheme: light)" 
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: teal
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)" 
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: teal
       toggle:
@@ -70,7 +70,7 @@ plugins:
           show_source: true
     # custom_templates: templates
     watch:
-      - src
+      - {{cookiecutter.module_name}}
 
 # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types
 markdown_extensions:
@@ -100,6 +100,6 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/{{cookiecutter.github_organization_name}}
     # - icon: fontawesome/brands/docker
-    #   link: https://github.com/orgs/MaastrichtU-IDS/packages
+    #   link: https://github.com/orgs/{{cookiecutter.github_organization_name}}/packages
     # - icon: fontawesome/brands/twitter
     #   link: https://twitter.com/um_ids

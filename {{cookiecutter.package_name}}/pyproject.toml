@@ -94,7 +94,7 @@ docs = "./scripts/docs.sh"
 
 # TOOLS
 [tool.hatch.version]
-path = "src/{{cookiecutter.module_name}}/__init__.py"
+path = "{{cookiecutter.module_name}}/__init__.py"
 
 
 [tool.isort]

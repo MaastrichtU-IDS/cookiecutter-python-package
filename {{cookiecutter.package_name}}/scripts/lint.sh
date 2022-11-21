@@ -2,7 +2,7 @@
 
 set -e
 
-isort nanopub tests --check-only
-flake8 nanopub tests
-mypy nanopub
-# black nanopub tests --check
+isort {{cookiecutter.module_name}} tests --check-only
+flake8 {{cookiecutter.module_name}} tests
+mypy {{cookiecutter.module_name}}
+# black {{cookiecutter.module_name}} tests --check
