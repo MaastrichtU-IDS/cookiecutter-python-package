@@ -2,4 +2,6 @@
 
 """{{ cookiecutter.short_description.rstrip(".") }}."""
 
-from .api import *  # noqa
+__version__ = "0.0.1"
+
+from .api import *

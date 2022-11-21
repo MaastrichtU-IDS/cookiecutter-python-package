@@ -1,5 +1,4 @@
-from {{cookiecutter.module_name}} import Api
-from {{cookiecutter.module_name}}.version import get_version
+from {{cookiecutter.module_name}} import Api, VERSION
 
 
 def test_api():
@@ -10,5 +9,4 @@ def test_api():
 
 def test_version():
     """Test the version is a string."""
-    version = get_version()
-    assert isinstance(version, str)
+    assert isinstance(VERSION, str)

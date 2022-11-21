@@ -16,4 +16,5 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.documentation_website|lower }}' == "false":
         PROJECT_DIRECTORY.joinpath("mkdocs.yml").unlink()
+        PROJECT_DIRECTORY.joinpath(".github", "workflows", "docs.yml").unlink()
         shutil.rmtree(DOCS)

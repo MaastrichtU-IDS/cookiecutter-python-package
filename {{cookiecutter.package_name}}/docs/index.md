@@ -14,9 +14,11 @@ You can use it with a CLI, or as an object in a python script.
 
 ## 🗃️ Projects using {{cookiecutter.package_name}}
 
-Here are some projects using `{{cookiecutter.package_name}}`
+Here are some projects using `{{cookiecutter.package_name}}`:
+
+* TODO
 
 
 ## 🤝 Credits
 
-Library built with [Typer](https://typer.tiangolo.com/){:target="_blank"}.
+Library built with [MaastrichtU-IDS/cookiecutter-python-package](https://github.com/MaastrichtU-IDS/cookiecutter-python-package){:target="_blank"}.

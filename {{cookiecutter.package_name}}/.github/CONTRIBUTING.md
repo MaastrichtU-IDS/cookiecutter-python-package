@@ -1,5 +1,7 @@
 # Contributing
 
+> DEPRECATED, to be updated
+
 Contributions to this repository are welcomed and encouraged.
 
 ## Code Contribution
@@ -30,11 +32,7 @@ acceptance and merge into the main branch. This has several benefits:
 
 ### Code Style
 
-This project encourages the use of optional static typing. It
-uses [`mypy`](http://mypy-lang.org/) as a type checker
-and [`sphinx_autodoc_typehints`](https://github.com/agronholm/sphinx-autodoc-typehints)
-to automatically generate documentation based on type hints. You can check if
-your code passes `mypy` with `tox -e mypy`.
+This project encourages the use of optional static typing. It uses [`mypy`](http://mypy-lang.org/) as a type checker. You can check if your code passes `mypy` with `tox -e mypy`.
 
 This project uses [`black`](https://github.com/psf/black) to automatically
 enforce a consistent code style. You can apply `black` and other pre-configured
@@ -76,10 +74,9 @@ build it locally with `tox -e docs`.
 
 ### Testing
 
-Functions in this repository should be unit tested. These can either be written
+Functions in this repository should be  tested. These can either be written
 using the `unittest` framework in the `tests/` directory or as embedded
-doctests. You can check that the unit tests pass with `tox -e py` and that the
-doctests pass with `tox -e doctests`. These tests are required to pass for
+doctests. These tests are required to pass for
 accepting a contribution.
 
 ### Syncing your fork
@@ -95,7 +92,7 @@ git remote add {{cookiecutter.github_organization_name}} https://github.com/{{co
 Then, you can merge upstream code into your branch. You can also use the GitHub
 UI to do this by following [this tutorial](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
 
-## Acknowledgements 
+## Acknowledgements
 
 These code contribution guidelines are derived from the [MaastrichtU-IDS/cookiecutter-python-package](https://github.com/MaastrichtU-IDS/cookiecutter-python-package)
 Python package template. They're free to reuse and modify as long as they're properly acknowledged.

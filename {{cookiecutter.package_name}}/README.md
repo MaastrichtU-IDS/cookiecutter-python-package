@@ -23,7 +23,7 @@
     </a> -->
     <!--a href="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/branch/main">
         <img src="https://codecov.io/gh/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/branch/main/graph/badge.svg" alt="Codecov status" />
-    </a> 
+    </a>
     <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/blob/main/.github/CODE_OF_CONDUCT.md">
         <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant"/>
     </a-->
@@ -55,7 +55,7 @@ Get a full rundown of the available options with:
 {{cookiecutter.package_name}} --help
 ```
 
-### 🐍 Use with python 
+### 🐍 Use with python
 
 This library can also be used directly in python scripts
 
@@ -69,25 +69,7 @@ import {{cookiecutter.module_name}}
 
 ## 🧑‍💻 Development setup
 
-<details>
-  <summary>See developer instructions</summary>
-
 The final section of the README is for if you want to get involved by making a code contribution.
-
-<details><summary>You will need to <a href="https://python-poetry.org/docs">install Poetry</a></summary><br/>
-
-Be careful as poetry sometime uses an unexpected python version by default, you can check for the environment used by poetry in the current folder by running:
-
-```bash
-poetry env list
-```
-
-You can easily tell `poetry` to use your current version of python for the current folder by running the following command:
-
-```bash
-poetry env use $(which python)
-```
-</details>
 
 
 ### Install
@@ -99,10 +81,17 @@ git clone https://github.com/{{cookiecutter.github_organization_name}}/{{cookiec
 cd {{cookiecutter.package_name}}
 ```
 
+Create and enable a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
 Install the dependencies:
 
 ```bash
-poetry install
+pip install -e ".[test,dev,doc]"
 ```
 
 ### Run
@@ -110,7 +99,7 @@ poetry install
 Run the library with the CLI:
 
 ```bash
-poetry run {{cookiecutter.package_name}} --help
+{{cookiecutter.package_name}} --help
 ```
 
 ### Test
@@ -118,22 +107,9 @@ poetry run {{cookiecutter.package_name}} --help
 Run the tests locally:
 
 ```bash
-poetry run pytest -s
+pytest -s
 ```
 
-### Add a new dependency
-
-You can change the `pyproject.toml` file and run:
-
-```bash
-poetry update
-```
-
-Or you can do it directly with the CLI (e.g. for `pandas` here):
-
-```bash
-poetry add pandas
-```
 
 ### Generate docs
 
@@ -142,22 +118,7 @@ The documentation is automatically generated from the markdown files in the `doc
 Start the docs on [http://localhost:8001](http://localhost:8001){:target="_blank"}
 
 ```bash
-poetry run mkdocs serve -a localhost:8001
-```
-
-
-### Build and publish
-
-Build:
-
-```bash
-poetry build
-```
-
-Publishing a new release is automatically done by a GitHub Action workflow when a release is created on GitHub:
-
-```bash
-poetry publish
+mkdocs serve -a localhost:8001
 ```
 
 
@@ -165,10 +126,8 @@ poetry publish
 
 The deployment of new releases is done automatically by a GitHub Action workflow when a new release is created on GitHub. To release a new version:
 
-1. Make sure the `PYPI_API_TOKEN` secret has been defined in the GitHub repository (in Settings > Secrets > Actions). You can get an API token from PyPI [here](https://pypi.org/manage/account/).
+1. Make sure the `PYPI_TOKEN` secret has been defined in the GitHub repository (in Settings > Secrets > Actions). You can get an API token from PyPI [here](https://pypi.org/manage/account/).
 2. Increment the `version` number in the `pyproject.toml` file in the root folder of the repository.
 3. Create a new release on GitHub, which will automatically trigger the publish workflow, and publish the new release to PyPI.
 
 You can also manually trigger the workflow from the Actions tab in your GitHub repository webpage.
-
-</details>
