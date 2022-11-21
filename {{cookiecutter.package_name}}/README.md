@@ -94,6 +94,12 @@ Install the dependencies:
 pip install -e ".[test,dev,doc]"
 ```
 
+Install the pre-commit hooks:
+
+```bash
+pre-commit install
+```
+
 ### Run
 
 Run the library with the CLI:
