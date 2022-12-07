@@ -8,13 +8,13 @@ Adapted from https://github.com/audreyfeldroy/cookiecutter-pypackage/blob/master
 import re
 import sys
 
-MODULE_REGEX = re.compile(r'^[_a-zA-Z][_a-zA-Z0-9]+$')
+MODULE_REGEX = re.compile(r'^[-a-zA-Z][-a-zA-Z0-9]+$')
 
-module_name = '{{ cookiecutter.module_name}}'
+package_name = '{{ cookiecutter.package_name}}'
 
-if not MODULE_REGEX.match(module_name):
+if not MODULE_REGEX.match(package_name):
     print(
-        f'ERROR: {module_name} is not a valid Python module name. Please do not use a - and use _ instead'
+        f'ERROR: {package_name} is not a valid Python package name. Please do not use _ and use - instead'
     )
 
     # Exit to cancel project
