@@ -1,10 +1,9 @@
 # 🍪🐍 Cookiecutter for Python package
 
-A [cookiecutter](https://github.com/cookiecutter/cookiecutter) for making new Python package repositories.
+A [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for making new Python package repositories.
 
-This template is different from [@audreyfeldroy](https://github.com/audreyfeldroy)'s
-[cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage) because it uses the `hatch` build backend, `mkdocs` for the documentation website, and `typer` for the optional CLI. If you're looking for something similar but not quite
-like this, try her package or see her [list of alternatives](https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#similar-cookiecutter-templates).
+This template uses the `hatch` build backend, `mkdocs` for the documentation website, and `typer` for the optional CLI. If you're looking for something similar but not quite
+like this see this [list of alternatives templates](https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#similar-cookiecutter-templates).
 
 
 ## 🛠️ Getting Started
@@ -21,7 +20,7 @@ pip install cookiecutter
 cookiecutter https://github.com/MaastrichtU-IDS/cookiecutter-python-package
 ```
 
-3. Enter the requested information, then win! Remember, package names should only have letters, numbers, and underscores.
+3. Enter the requested information, then win! Remember, package names should only have letters, numbers, and dashes.
 
 4. If you're working under version control, copy the repository into your folder tracked under git, commit the files, and push to your remote.
 
@@ -38,7 +37,7 @@ Your new python package will have the following:
 - Documentation build with `mkdocs`
 - A `py.typed` file so other packages can use your type hints
 - Automated running of tests on each push with GitHub Actions
-- A good base `.gitignore` generated from [gitignore.io](https://gitignore.io).
+- A good and readable base `.gitignore` for python projects
 - A pre-formatted README with badges
 - A pre-formatted LICENSE file with the MIT License (you can change this to whatever you want, though)
 - A pre-formatted CONTRIBUTING guide

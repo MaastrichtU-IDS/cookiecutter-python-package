@@ -1,4 +1,4 @@
-from {{cookiecutter.module_name}} import __version__, Api
+from {{cookiecutter.module_name}} import Api, __version__
 
 
 def test_api():

@@ -1,5 +1,4 @@
 name: Publish package
-
 on:
   workflow_dispatch:
   release:
@@ -7,29 +6,8 @@ on:
 
 jobs:
 
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
-      matrix:
-        python-version: ["3.8", "3.9", "3.10"]
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
-
-    - name: Install dependencies
-      run: |
-        pip install ".[test,dev]"
-
-    - name: Test with pytest
-      run: |
-        pytest --cov=app --cov-report=term-missing tests
-
+  tests:
+    uses: {{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/.github/workflows/test.yml@main
 
   publish:
     needs: test
@@ -50,8 +28,7 @@ jobs:
       run: python -m build
 
     - name: Publish package
-      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
         password: ${{ "{{" }} secrets.PYPI_TOKEN {{ "}}" }}
-

@@ -1,5 +1,6 @@
-from {{cookiecutter.module_name}}.__main__ import cli
 from typer.testing import CliRunner
+
+from {{cookiecutter.module_name}}.__main__ import cli
 
 runner = CliRunner()
 

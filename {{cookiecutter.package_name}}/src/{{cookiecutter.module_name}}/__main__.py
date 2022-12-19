@@ -1,6 +1,7 @@
 import typer
-from {{cookiecutter.module_name}}.api import Api
+
 from {{cookiecutter.module_name}} import __version__
+from {{cookiecutter.module_name}}.api import Api
 
 cli = typer.Typer()
 
@@ -15,19 +16,19 @@ GREEN = '\033[32m'
 def cli_hello(
     name: str = typer.Argument("World", help="Who to greet"),
     output: str = typer.Option(None, help="Path to the output file"),
-    verbose: bool = typer.Option(True, help="Display logs")
-):
+    verbose: bool = typer.Option(True, help="Display logs"),
+) -> None:
     api = Api()
     print(api.get_hello_world(name))
-    if (output):
-        if verbose: print(f'Writing to file {BOLD}{GREEN}{output}{END}')
+    if output:
+        if verbose:
+            print(f'Writing to file {BOLD}{GREEN}{output}{END}')
         with open(output, "w") as file:
             file.write(api.get_hello_world(name))
 
 
-
 @cli.command("version")
-def cli_version():
+def cli_version() -> None:
     print(__version__)
 
 

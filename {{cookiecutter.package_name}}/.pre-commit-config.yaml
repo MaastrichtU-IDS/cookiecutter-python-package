@@ -43,6 +43,11 @@ repos:
     hooks:
     -   id: isort
         name: 🔄 Formatting imports with isort (python)
+{% if cookiecutter.black_formatting|lower != "false" %}-   repo: https://github.com/psf/black
+    rev: 22.8.0
+    hooks:
+    -   id: black
+        name: ✒️  Formatting code with Black{% endif %}
 ci:
     autofix_commit_msg: 🎨 [pre-commit.ci] Auto format from pre-commit.com hooks
     autoupdate_commit_msg: ⬆ [pre-commit.ci] pre-commit autoupdate

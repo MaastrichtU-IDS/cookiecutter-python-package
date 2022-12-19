@@ -1,6 +1,6 @@
 {
     "package_name": "my-package",
-    "module_name": "{{ cookiecutter.module_name.replace('-', '_') }}",
+    "module_name": "{{ cookiecutter.package_name.replace('-', '_') }}",
     "package_name_stylized": "{{ cookiecutter.module_name.replace('_', ' ').capitalize() }}",
     "short_description": "A nice python package",
     "github_organization_name": "your-org-or-username",
@@ -8,5 +8,7 @@
     "author_email": "email@example.com",
     "author_orcid": "https://orcid.org/0000-0000-0000-0000",
     "command_line_interface": true,
-    "documentation_website": true
+    "documentation_website": true,
+    "init_git": true,
+    "black_formatting": false
 }
