@@ -21,6 +21,7 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 ]
 dynamic = ["version"]
 
@@ -40,7 +41,7 @@ test = [
     "coveralls >=3.3.0",
     "mypy >=0.991",
     "isort >=5.11.0",
-    "flake8 >=6.0.0",
+    "flake8 >=5.0.0",
     "Flake8-pyproject >=1.2.2",{% if cookiecutter.black_formatting|lower != "false" %}
     "black >= 22.8.0",{% endif %}
 ]{% if cookiecutter.documentation_website|lower != "false" %}
@@ -53,7 +54,7 @@ doc = [
 ]{% endif %}
 dev = [
     "pre-commit >=2.17.0",
-    "autoflake >=2.0.0",
+    "autoflake >=1.0.0",
 ]
 
 

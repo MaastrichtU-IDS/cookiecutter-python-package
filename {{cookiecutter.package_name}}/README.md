@@ -1,24 +1,16 @@
-<h1 align="center">
-  {{cookiecutter.package_name_stylized}}
-</h1>
+<div align="center">
 
-<p align="center">
-    <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
-        <img alt="PyPI" src="https://img.shields.io/pypi/v/{{cookiecutter.package_name}}?logo=pypi&logoColor=silver" />
-    </a>
-    <a href="https://pypi.org/project/{{cookiecutter.package_name}}">
-        <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}?logo=python&logoColor=silver" />
-    </a>
-    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml">
-        <img alt="Tests" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg" />
-    </a>
-    <a href="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml">
-        <img alt="Publish" src="https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg" />
-    </a>{% if cookiecutter.black_formatting|lower != "false" %}
-    <a href="https://github.com/psf/black">
-        <img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg" />
-    </a>{% endif %}
-</p>
+# {{cookiecutter.package_name_stylized}}
+
+[![PyPI - Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}}.svg?logo=pypi&label=PyPI&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}.svg?logo=python&label=Python&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
+[![license](https://img.shields.io/pypi/l/{{cookiecutter.package_name}}.svg?color=%2334D058)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/blob/main/LICENSE.txt){% if cookiecutter.black_formatting|lower != "false" %}
+[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif %}
+
+[![Test package](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml)
+[![Publish package](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml)
+
+</div>
 
 {{cookiecutter.short_description}}
 
