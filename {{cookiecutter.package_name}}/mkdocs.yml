@@ -66,11 +66,13 @@ plugins:
     default_handler: python
     handlers:
       python:
-        rendering:
+        options:
           show_source: true
     # custom_templates: templates
-    watch:
-      - {{cookiecutter.module_name}}
+
+watch:
+  - src
+  - docs
 
 # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types
 markdown_extensions:

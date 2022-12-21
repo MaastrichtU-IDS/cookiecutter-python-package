@@ -6,9 +6,9 @@ from {{cookiecutter.module_name}}.api import Api
 cli = typer.Typer()
 
 # Variables to make the prints gorgeous:
-BOLD = '\033[1m'
-END = '\033[0m'
-GREEN = '\033[32m'
+BOLD = "\033[1m"
+END = "\033[0m"
+GREEN = "\033[32m"
 # RED = '\033[91m' YELLOW = '\033[33m' CYAN = '\033[36m' PURPLE = '\033[95m' BLUE = '\033[34m'
 
 
@@ -22,7 +22,7 @@ def cli_hello(
     print(api.get_hello_world(name))
     if output:
         if verbose:
-            print(f'Writing to file {BOLD}{GREEN}{output}{END}')
+            print(f"Writing to file {BOLD}{GREEN}{output}{END}")
         with open(output, "w") as file:
             file.write(api.get_hello_world(name))
 
