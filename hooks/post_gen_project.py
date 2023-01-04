@@ -8,7 +8,7 @@ import shutil
 
 PROJECT_DIRECTORY = pathlib.Path(os.path.realpath(os.path.curdir)).resolve()
 # PACKAGE = PROJECT_DIRECTORY.joinpath("src", "{{ cookiecutter.module_name }}")
-PACKAGE = PROJECT_DIRECTORY.joinpath("{{ cookiecutter.module_name }}")
+PACKAGE = PROJECT_DIRECTORY.joinpath("src", "{{ cookiecutter.module_name }}")
 DOCS = PROJECT_DIRECTORY.joinpath("docs")
 PACKAGE_NAME = "{{ cookiecutter.package_name }}"
 
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.command_line_interface|lower }}' == "false":
         PACKAGE.joinpath("__main__.py").unlink()
-        PACKAGE.joinpath("tests", "test_cli.py").unlink()
+        PROJECT_DIRECTORY.joinpath("tests", "test_cli.py").unlink()
 
     if '{{ cookiecutter.documentation_website|lower }}' == "false":
         PROJECT_DIRECTORY.joinpath("mkdocs.yml").unlink()
