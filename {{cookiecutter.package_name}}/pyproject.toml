@@ -42,7 +42,7 @@ dependencies = [{% if cookiecutter.command_line_interface|lower != "false" %}
 test = [
     "pytest >=7.1.3",
     "pytest-cov >=3.0.0",
-    "ruff >=0.0.189",
+    "ruff >=0.0.219",
     "mypy >=0.991",{% if cookiecutter.black_formatting|lower != "false" %}
     "black >= 22.8.0",{% endif %}
 ]{% if cookiecutter.documentation_website|lower != "false" %}
