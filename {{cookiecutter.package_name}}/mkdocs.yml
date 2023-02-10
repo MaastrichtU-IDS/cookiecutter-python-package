@@ -9,8 +9,8 @@ copyright: Copyright &copy; {% now 'local', '%Y' %} {{cookiecutter.author_name}}
 
 theme:
   name: "material"
-  favicon: assets/logo.png
-  logo: assets/logo.png
+  favicon: assets/logo.svg
+  logo: assets/logo.svg
   # icon:
   #   logo: material/microscope
   language: en
@@ -53,10 +53,8 @@ nav:
     - Usage: usage.md
     - Development: development.md
   - Code reference:
-      - "<span><i class='fa-solid fa-flask'></i>&nbsp;&nbsp;Api</span>": Api.md
-      # - "<span><i class='fa-solid fa-vial-circle-check'></i>&nbsp;&nbsp;FairTestEvaluation</span>": FairTestEvaluation.md
-      # - "<span><i class='fa-solid fa-flask-vial'></i>&nbsp;&nbsp;FairTestAPI</span>": FairTestAPI.md
-  - "<span>Issues&nbsp;&nbsp;<i class='fa-solid fa-arrow-up-right-from-square'></i></span>": https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/issues" target="_blank
+      - Api: Api.md
+  - Issues: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/issues" target="_blank
 
 plugins:
 # - admonition
@@ -89,11 +87,6 @@ markdown_extensions:
 
 extra_css:
   - assets/custom.css
-
-extra_javascript:
-  - assets/fontawesome.min.js
-  - assets/solid.min.js
-
 
 extra:
   social:
