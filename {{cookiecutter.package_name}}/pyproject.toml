@@ -91,7 +91,7 @@ check = [
     "mypy src",
 ]
 all = [
-    "format",
+    "fmt",
     "check",
     "cov",
 ]{% if cookiecutter.documentation_website|lower != "false" %}

@@ -49,7 +49,7 @@ jobs:
       run: |
         pip install hatch
 
-    - name: Check with flake8 and mypy
+    - name: Check with ruff and mypy
       run: |
         hatch run check
 

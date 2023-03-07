@@ -83,7 +83,7 @@ Make sure the existing tests still work by running ``pytest``. Note that any pul
 hatch run test
 ```
 
-To display all `print()`:
+To display all logs when debugging:
 
 ```bash
 hatch run test -s
