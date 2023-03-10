@@ -53,8 +53,8 @@ doc = [
     "mdx-include >=1.4.1",
     "mkdocs-markdownextradata-plugin >=0.2.5",
 ]{% endif %}
-dev = [
-    "pre-commit >=2.17.0",
+dev = [{% if cookiecutter.enable_pre_commit|lower != "false" %}
+    "pre-commit >=2.17.0",{% endif %}
 ]
 
 
@@ -73,8 +73,8 @@ features = [
     "dev",{% if cookiecutter.documentation_website|lower != "false" %}
     "doc",{% endif %}
 ]
-post-install-commands = [
-    "pre-commit install",
+post-install-commands = [{% if cookiecutter.enable_pre_commit|lower != "false" %}
+    "pre-commit install",{% endif %}
 ]
 
 [tool.hatch.envs.default.scripts]

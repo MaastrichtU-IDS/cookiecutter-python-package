@@ -11,9 +11,9 @@ __pycache__/
 coverage.xml
 
 # Virtual envs
-.env
 .venv/
 venv/
+.env
 
 # Notebooks
 .ipynb_checkpoints
@@ -32,3 +32,4 @@ __pycache__/
 
 # IDEs
 .idea/
+.vscode/

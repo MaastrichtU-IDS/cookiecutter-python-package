@@ -30,6 +30,9 @@ if __name__ == '__main__':
         PROJECT_DIRECTORY.joinpath("mkdocs.yml").unlink()
         shutil.rmtree(DOCS)
 
+    if '{{ cookiecutter.enable_pre_commit|lower }}' == "false":
+        PROJECT_DIRECTORY.joinpath(".pre-commit-config.yaml").unlink()
+
     print(
         f"✅ Your project has been successfully generated in {BOLD}{PACKAGE_NAME}{END}.\n"
         f"📂 Enter it with {BOLD}cd {PACKAGE_NAME}{END}\n"

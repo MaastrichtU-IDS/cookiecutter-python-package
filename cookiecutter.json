@@ -9,6 +9,7 @@
     "author_orcid": "https://orcid.org/0000-0000-0000-0000",
     "command_line_interface": true,
     "init_git": true,
+    "enable_pre_commit": false,
     "documentation_website": false,
     "black_formatting": false
 }
