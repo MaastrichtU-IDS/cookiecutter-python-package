@@ -1,8 +1,8 @@
-[![Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Python versions](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Pull requests welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/fork)
+[![Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Python versions](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Pull requests welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/fork)
 
-[![Run tests](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml) [![CodeQL](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_organization_name}}_{{cookiecutter.package_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_organization_name}}_{{cookiecutter.package_name}})
+[![Run tests](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml) [![CodeQL](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_username}}_{{cookiecutter.package_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_username}}_{{cookiecutter.package_name}})
 
-[![Publish to PyPI](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml) [![Publish docs](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml)
+[![Publish to PyPI](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml) [![Publish docs](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml)
 
 
 
@@ -11,7 +11,7 @@
 Clone the repository and go in the project folder:
 
 ```bash
-git clone https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}
+git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}
 cd {{cookiecutter.package_name}}
 ```
 
@@ -106,7 +106,7 @@ To install the project for development you can either use [`venv`](https://docs.
 
 ## ✅ Run the tests
 
-[![Python application](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml){:target="_blank"}
+[![Python application](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml){:target="_blank"}
 
 Tests are automatically run by a GitHub Actions workflow when new code is pushed to the GitHub repository.
 
@@ -143,7 +143,7 @@ The tests use the [```nanopub-java```](https://github.com/Nanopublication/nanopu
 
 ## 📖 Generate docs
 
-[![Publish docs](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml){:target="_blank"}
+[![Publish docs](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml){:target="_blank"}
 
 The documentation (this website) is automatically generated from the markdown files in the `docs` folder and python docstring comments, and published by a GitHub Actions workflow.
 
@@ -164,7 +164,7 @@ Serve the docs on [http://localhost:8008](http://localhost:8008){:target="_blank
 
 ## 🏷️ Publish a new release
 
-[![Publish to PyPI](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml){:target="_blank"}
+[![Publish to PyPI](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml){:target="_blank"}
 
 1. Increment the `__version__` in `{{cookiecutter.module_name}}/__init__.py`
 2. Push to GitHub

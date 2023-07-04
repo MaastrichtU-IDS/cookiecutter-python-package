@@ -9,10 +9,10 @@ description = "{{cookiecutter.short_description}}"
 readme = "README.md"
 license = { file = "LICENSE.txt" }
 authors = [
-    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" },
+    { name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}" },
 ]
 maintainers = [
-    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" },
+    { name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}" },
 ]
 keywords = [
     "Python",
@@ -59,11 +59,11 @@ dev = [{% if cookiecutter.enable_pre_commit|lower != "false" %}
 
 
 [project.urls]
-Homepage = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}"
-Documentation = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}"
-History = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/releases"
-Tracker = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/issues"
-Source = "https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}"
+Homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}"
+Documentation = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}"
+History = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/releases"
+Tracker = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/issues"
+Source = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}"
 
 
 # ENVIRONMENTS AND SCRIPTS

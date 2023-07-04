@@ -4,11 +4,11 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}}.svg?logo=pypi&label=PyPI&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}.svg?logo=python&label=Python&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
-[![license](https://img.shields.io/pypi/l/{{cookiecutter.package_name}}.svg?color=%2334D058)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/blob/main/LICENSE.txt){% if cookiecutter.black_formatting|lower != "false" %}
+[![license](https://img.shields.io/pypi/l/{{cookiecutter.package_name}}.svg?color=%2334D058)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/blob/main/LICENSE.txt){% if cookiecutter.black_formatting|lower != "false" %}
 [![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif %}
 
-[![Test package](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/test.yml)
-[![Publish package](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml)
+[![Test package](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml)
+[![Publish package](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml)
 
 </div>
 
@@ -58,7 +58,7 @@ The final section of the README is for if you want to run the package in develop
 Clone the repository:
 
 ```bash
-git clone https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}
+git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}
 cd {{cookiecutter.package_name}}
 ```
 ### 🐣 Install dependencies

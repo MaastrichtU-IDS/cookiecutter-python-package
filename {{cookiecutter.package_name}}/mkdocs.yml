@@ -1,11 +1,11 @@
 site_name: {{cookiecutter.package_name_stylized}}
 site_description: {{cookiecutter.short_description}}
-site_author: {{cookiecutter.author_name}}
-site_url: https://{{cookiecutter.github_organization_name.lower()}}.github.io/{{cookiecutter.package_name}}
-repo_name: {{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}
-repo_url: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}
+site_author: {{cookiecutter.full_name}}
+site_url: https://{{cookiecutter.github_username.lower()}}.github.io/{{cookiecutter.package_name}}
+repo_name: {{cookiecutter.github_username}}/{{cookiecutter.package_name}}
+repo_url: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}
 edit_uri: "edit/main/docs/"
-copyright: Copyright &copy; {% now 'local', '%Y' %} {{cookiecutter.author_name}}
+copyright: Copyright &copy; {% now 'local', '%Y' %} {{cookiecutter.full_name}}
 
 theme:
   name: "material"
@@ -54,7 +54,7 @@ nav:
     - Development: development.md
   - Code reference:
       - Api: Api.md
-  - Issues: https://github.com/{{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/issues" target="_blank
+  - Issues: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/issues" target="_blank
 
 plugins:
 # - admonition
@@ -93,8 +93,8 @@ extra:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/{{cookiecutter.package_name}}
     - icon: fontawesome/brands/github
-      link: https://github.com/{{cookiecutter.github_organization_name}}
+      link: https://github.com/{{cookiecutter.github_username}}
     # - icon: fontawesome/brands/docker
-    #   link: https://github.com/orgs/{{cookiecutter.github_organization_name}}/packages
+    #   link: https://github.com/orgs/{{cookiecutter.github_username}}/packages
     # - icon: fontawesome/brands/twitter
     #   link: https://twitter.com/um_ids

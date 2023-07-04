@@ -7,7 +7,7 @@ on:
 jobs:
 
   tests:
-    uses: {{cookiecutter.github_organization_name}}/{{cookiecutter.package_name}}/.github/workflows/test.yml@main
+    uses: {{cookiecutter.github_username}}/{{cookiecutter.package_name}}/.github/workflows/test.yml@main
     secrets: inherit
 
   publish:
