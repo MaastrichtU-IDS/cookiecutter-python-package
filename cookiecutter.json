@@ -12,21 +12,19 @@
     "enable_pre_commit": ["yes", "no"],
     "documentation_website": ["yes", "no"],
     "black_formatting": ["yes", "no"],
-    "__internal_use": {
-        "descriptions": {
-            "package_name": "Select your package name:",
-            "module_name": "Select your module name:",
-            "package_name_stylized": "Stylized package name:",
-            "short_description": "Short description:",
-            "github_username": "GitHub username or organization:",
-            "full_name": "Author full name:",
-            "email": "Author email:",
-            "orcid": "Author ORCID:",
-            "command_line_interface": "Add CLI:",
-            "init_git": "Initialize a git repository:",
-            "enable_pre_commit": "Enable pre-commit:",
-            "documentation_website": "Add a documentation website:",
-            "black_formatting": "Enable black formatting:"
-        }
+    "__questions__": {
+        "package_name": "Select your package name:",
+        "module_name": "Select your module name:",
+        "package_name_stylized": "Stylized package name:",
+        "short_description": "Short description:",
+        "github_username": "GitHub username or organization:",
+        "full_name": "Author full name:",
+        "email": "Author email:",
+        "orcid": "Author ORCID:",
+        "command_line_interface": "Add CLI:",
+        "init_git": "Initialize a git repository:",
+        "enable_pre_commit": "Enable pre-commit:",
+        "documentation_website": "Add a documentation website:",
+        "black_formatting": "Enable black formatting:"
     }
 }
