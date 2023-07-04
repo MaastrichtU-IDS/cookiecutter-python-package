@@ -29,11 +29,11 @@ classifiers = [
 ]
 dynamic = ["version"]
 
-dependencies = [{% if cookiecutter.command_line_interface|lower != "false" %}
+dependencies = [{% if cookiecutter.command_line_interface|lower != "no" %}
     "typer >=0.6.0",{% endif %}
 ]
 
-{% if cookiecutter.command_line_interface|lower != "false" %}
+{% if cookiecutter.command_line_interface|lower != "no" %}
 [project.scripts]
 {{cookiecutter.package_name}} = "{{cookiecutter.module_name}}.__main__:cli"{% endif %}
 
@@ -43,9 +43,9 @@ test = [
     "pytest >=7.1.3",
     "pytest-cov >=3.0.0",
     "ruff >=0.0.219",
-    "mypy >=0.991",{% if cookiecutter.black_formatting|lower != "false" %}
+    "mypy >=0.991",{% if cookiecutter.black_formatting|lower != "no" %}
     "black >= 22.8.0",{% endif %}
-]{% if cookiecutter.documentation_website|lower != "false" %}
+]{% if cookiecutter.documentation_website|lower != "no" %}
 doc = [
     "mkdocs >=1.4.2",
     "mkdocs-material >=8.2.7",
@@ -53,7 +53,7 @@ doc = [
     "mdx-include >=1.4.1",
     "mkdocs-markdownextradata-plugin >=0.2.5",
 ]{% endif %}
-dev = [{% if cookiecutter.enable_pre_commit|lower != "false" %}
+dev = [{% if cookiecutter.enable_pre_commit|lower != "no" %}
     "pre-commit >=2.17.0",{% endif %}
 ]
 
@@ -70,33 +70,36 @@ Source = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.pac
 [tool.hatch.envs.default]
 features = [
     "test",
-    "dev",{% if cookiecutter.documentation_website|lower != "false" %}
+    "dev",{% if cookiecutter.documentation_website|lower != "no" %}
     "doc",{% endif %}
 ]
-post-install-commands = [{% if cookiecutter.enable_pre_commit|lower != "false" %}
+post-install-commands = [{% if cookiecutter.enable_pre_commit|lower != "no" %}
     "pre-commit install",{% endif %}
 ]
 
 [tool.hatch.envs.default.scripts]
-test = "pytest {args}"
-cov = "test --cov src {args}"
 dev = "python tests/dev.py {args}"
-fmt = [{% if cookiecutter.black_formatting|lower != "false" %}
+fmt = [{% if cookiecutter.black_formatting|lower != "no" %}
     "black src tests",{% endif %}
     "ruff src tests --fix",
 ]
 check = [
-    "ruff src tests",{% if cookiecutter.black_formatting|lower != "false" %}
+    "ruff src tests",{% if cookiecutter.black_formatting|lower != "no" %}
     "black src tests --check",{% endif %}
     "mypy src",
 ]
-all = [
-    "fmt",
+test = [
+    "pytest {args}",
     "check",
-    "cov",
-]{% if cookiecutter.documentation_website|lower != "false" %}
+]
+cov = "test --cov src {args}"
+cov-report = "cov --cov-report html {args} && python -m http.server 3000 --directory ./htmlcov"{% if cookiecutter.documentation_website|lower != "no" %}
 docs = "mkdocs serve -a localhost:8001"
 {% endif %}
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
 
 # TOOLS
 [tool.hatch.version]
@@ -131,7 +134,7 @@ filterwarnings = [
     "ignore::DeprecationWarning:httpx.*:"
 ]
 
-{% if cookiecutter.black_formatting|lower != "false" %}
+{% if cookiecutter.black_formatting|lower != "no" %}
 [tool.black]
 color = true
 line-length = 120

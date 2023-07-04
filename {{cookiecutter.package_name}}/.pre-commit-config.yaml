@@ -16,7 +16,7 @@ repos:
         name: 🪚 Fix end of files
     -   id: trailing-whitespace
         name: ✂️  Trim trailing whitespaces
-{% if cookiecutter.black_formatting|lower != "false" %}-   repo: https://github.com/psf/black
+{% if cookiecutter.black_formatting|lower != "no" %}-   repo: https://github.com/psf/black
     rev: 22.8.0
     hooks:
     -   id: black

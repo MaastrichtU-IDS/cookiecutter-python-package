@@ -19,18 +19,18 @@ YELLOW = "\033[33m"
 CYAN = "\033[36m"
 
 if __name__ == '__main__':
-    if '{{ cookiecutter.init_git|lower }}' != "false":
+    if '{{ cookiecutter.init_git|lower }}' != "no":
         os.system(f"cd {PROJECT_DIRECTORY} && git init")
 
-    if '{{ cookiecutter.command_line_interface|lower }}' == "false":
+    if '{{ cookiecutter.command_line_interface|lower }}' == "no":
         PACKAGE.joinpath("__main__.py").unlink()
         PROJECT_DIRECTORY.joinpath("tests", "test_cli.py").unlink()
 
-    if '{{ cookiecutter.documentation_website|lower }}' == "false":
+    if '{{ cookiecutter.documentation_website|lower }}' == "no":
         PROJECT_DIRECTORY.joinpath("mkdocs.yml").unlink()
         shutil.rmtree(DOCS)
 
-    if '{{ cookiecutter.enable_pre_commit|lower }}' == "false":
+    if '{{ cookiecutter.enable_pre_commit|lower }}' == "no":
         PROJECT_DIRECTORY.joinpath(".pre-commit-config.yaml").unlink()
 
     print(

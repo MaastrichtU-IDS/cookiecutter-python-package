@@ -4,7 +4,7 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}}.svg?logo=pypi&label=PyPI&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}.svg?logo=python&label=Python&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
-[![license](https://img.shields.io/pypi/l/{{cookiecutter.package_name}}.svg?color=%2334D058)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/blob/main/LICENSE.txt){% if cookiecutter.black_formatting|lower != "false" %}
+[![license](https://img.shields.io/pypi/l/{{cookiecutter.package_name}}.svg?color=%2334D058)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/blob/main/LICENSE.txt){% if cookiecutter.black_formatting|lower != "no" %}
 [![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black){% endif %}
 
 [![Test package](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml)
@@ -23,7 +23,7 @@ pip install {{cookiecutter.package_name}}
 ```
 
 ## 🪄 Usage
-{% if cookiecutter.command_line_interface|lower != "false" %}
+{% if cookiecutter.command_line_interface|lower != "no" %}
 ### ⌨️ Use as a command-line interface
 
 You can easily use your package from your terminal after installing `{{cookiecutter.package_name}}` with pip:
@@ -66,7 +66,7 @@ cd {{cookiecutter.package_name}}
 Install [Hatch](https://hatch.pypa.io), this will automatically handle virtual environments and make sure all dependencies are installed when you run a script in the project:
 
 ```bash
-pip install --upgrade hatch
+pipx install hatch
 ```
 
 Install the dependencies in a local virtual environment:
@@ -77,7 +77,7 @@ hatch -v env create
 
 ### ☑️ Run tests
 
-Make sure the existing tests still work by running ``pytest``. Note that any pull requests to the fairworkflows repository on github will automatically trigger running of the test suite;
+Make sure the existing tests still work by running the test suite and linting checks. Note that any pull requests to the fairworkflows repository on github will automatically trigger running of the test suite;
 
 ```bash
 hatch run test
@@ -88,6 +88,13 @@ To display all logs when debugging:
 ```bash
 hatch run test -s
 ```
+
+You can also run the tests on multiple python versions:
+
+```bash
+hatch run all:test
+```
+
 
 ### 🧹 Code formatting
 
@@ -102,7 +109,7 @@ Check the code for errors, and if it is in accordance with the PEP8 style guide,
 ```
 hatch run check
 ```
-{% if cookiecutter.documentation_website|lower != "false" %}
+{% if cookiecutter.documentation_website|lower != "no" %}
 ### 📖 Generate documentation
 
 The documentation is automatically generated from the markdown files in the `docs` folder and python docstring comments, and published by a GitHub Actions workflow.

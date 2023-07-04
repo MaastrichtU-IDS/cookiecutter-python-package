@@ -47,16 +47,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install hatch
-
-    - name: Check with ruff and mypy
-      run: |
-        hatch run check
+        pipx install hatch
 
     - name: Test with coverage
       run: |
         hatch run cov --cov-report xml:coverage.xml
-{% if cookiecutter.documentation_website|lower != "false" %}
+{% if cookiecutter.documentation_website|lower != "no" %}
 
   publish-docs:
     name: Update documentation website
