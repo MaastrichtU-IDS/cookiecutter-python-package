@@ -12,7 +12,7 @@
     "enable_pre_commit": ["yes", "no"],
     "documentation_website": ["yes", "no"],
     "black_formatting": ["yes", "no"],
-    "__questions__": {
+    "__prompts__": {
         "package_name": "Select your package name:",
         "module_name": "Select your module name:",
         "package_name_stylized": "Stylized package name:",
