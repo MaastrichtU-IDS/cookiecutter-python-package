@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - orcid: {{cookiecutter.author_orcid}}
+  - orcid: {{cookiecutter.orcid}}
     email: {{cookiecutter.email}}
     given-names: {{cookiecutter.full_name}}
     # affiliation: Institute of Data Science, Maastricht University

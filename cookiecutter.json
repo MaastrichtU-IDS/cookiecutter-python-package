@@ -6,7 +6,7 @@
     "github_username": "your-org-or-username",
     "full_name": "Firstname Lastname",
     "email": "email@example.com",
-    "author_orcid": "https://orcid.org/0000-0000-0000-0000",
+    "orcid": "https://orcid.org/0000-0000-0000-0000",
     "command_line_interface": true,
     "init_git": true,
     "enable_pre_commit": false,
