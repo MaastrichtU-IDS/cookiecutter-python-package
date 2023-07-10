@@ -40,11 +40,10 @@ dependencies = [{% if cookiecutter.command_line_interface|lower != "no" %}
 
 [project.optional-dependencies]
 test = [
-    "pytest >=7.1.3",
+    "pytest >=7.4.0",
     "pytest-cov >=3.0.0",
-    "ruff >=0.0.219",
-    "mypy >=0.991",{% if cookiecutter.black_formatting|lower != "no" %}
-    "black >= 22.8.0",{% endif %}
+    "pre-commit >=3.3.0",
+    "mypy >=1.4.1",
 ]{% if cookiecutter.documentation_website|lower != "no" %}
 doc = [
     "mkdocs >=1.4.2",
@@ -53,9 +52,6 @@ doc = [
     "mdx-include >=1.4.1",
     "mkdocs-markdownextradata-plugin >=0.2.5",
 ]{% endif %}
-dev = [{% if cookiecutter.enable_pre_commit|lower != "no" %}
-    "pre-commit >=2.17.0",{% endif %}
-]
 
 
 [project.urls]
@@ -69,31 +65,28 @@ Source = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.pac
 # ENVIRONMENTS AND SCRIPTS
 [tool.hatch.envs.default]
 features = [
-    "test",
-    "dev",{% if cookiecutter.documentation_website|lower != "no" %}
+    "test",{% if cookiecutter.documentation_website|lower != "no" %}
     "doc",{% endif %}
 ]
-post-install-commands = [{% if cookiecutter.enable_pre_commit|lower != "no" %}
-    "pre-commit install",{% endif %}
+post-install-commands = [
+    "pre-commit install",
 ]
 
 [tool.hatch.envs.default.scripts]
 dev = "python tests/dev.py {args}"
-fmt = [{% if cookiecutter.black_formatting|lower != "no" %}
-    "black src tests",{% endif %}
-    "ruff src tests --fix",
-]
-check = [
-    "ruff src tests",{% if cookiecutter.black_formatting|lower != "no" %}
-    "black src tests --check",{% endif %}
-    "mypy src",
+fmt = [
+    "pre-commit run --all --all-files",
+    "mypy",
 ]
 test = [
+    "fmt",
     "pytest {args}",
-    "check",
 ]
-cov = "test --cov src {args}"
-cov-report = "cov --cov-report html {args} && python -m http.server 3000 --directory ./htmlcov"{% if cookiecutter.documentation_website|lower != "no" %}
+cov = [
+    "pytest --cov-report html {args}",
+    "python -c 'import webbrowser; webbrowser.open(\"http://0.0.0.0:3000\")'",
+    "python -m http.server 3000 --directory ./htmlcov",
+]{% if cookiecutter.documentation_website|lower != "no" %}
 docs = "mkdocs serve -a localhost:8001"
 {% endif %}
 
@@ -101,7 +94,7 @@ docs = "mkdocs serve -a localhost:8001"
 python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
 
-# TOOLS
+## TOOLS
 [tool.hatch.version]
 path = "src/{{cookiecutter.module_name}}/__init__.py"
 
@@ -115,6 +108,7 @@ omit = ["tests/*"]
 
 
 [tool.mypy]
+files = ["src/"]
 strict = true
 implicit_reexport = true
 follow_imports = "normal"
@@ -130,16 +124,23 @@ disallow_any_generics = true
 
 
 [tool.pytest.ini_options]
+addopts = [
+    "-vvv",
+    "--cov=src",
+    "--color=yes",
+    "--cov-report=term-missing",
+    # "--cov-fail-under=85",
+]
 filterwarnings = [
     "ignore::DeprecationWarning:httpx.*:"
 ]
 
-{% if cookiecutter.black_formatting|lower != "no" %}
+
 [tool.black]
 color = true
 line-length = 120
 target-version = ['py37']
-skip-string-normalization = false{% endif %}
+skip-string-normalization = false
 
 
 # https://github.com/charliermarsh/ruff#supported-rules
@@ -148,28 +149,28 @@ src = ["src", "tests"]
 target-version = "py37"
 line-length = 120
 select = [
-    "A",
-    "B",   # flake8-bugbear
-    "C",   # flake8-comprehensions
-    "E",   # pycodestyle errors
-    "F",   # pyflakes
-    # "FBT", # flake8-boolean-trap
-    "I",   # isort
-    "ICN",
-    "N",
-    "PLC",
-    "PLE",
-    "PLR",
-    "PLW",
-    "Q",
-    "RUF",
-    "S",
-    "SIM",
+    "I",     # isort
+    "N",     # pep8-naming
+    "S",     # bandit
+    "A",     # flake8-builtins
+    "YTT",   # flake8-2020
+    "B",     # flake8-bugbear
+    "C",     # flake8-comprehensions
+    "ICN",   # flake8-import-conventions
+    "SIM",   # flake8-simplify
+    "TID",   # flake8-tidy-imports
+    "Q",     # flake8-quotes
+    # "FBT",   # flake8-boolean-trap
+    "F",     # pyflakes
+    "UP",    # pyupgrade
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "PLC",   # pylint convention
+    "PLE",   # pylint error
+    # "PLR",   # pylint refactor Magic value used in comparison, consider replacing 400 with a constant variable
+    "PLW",   # pylint warning
+    "RUF",   # ruff specific
     "T",
-    "TID",
-    "UP",
-    "W",  # pycodestyle warnings
-    "YTT",
 ]
 ignore = [
     "E501", # line too long

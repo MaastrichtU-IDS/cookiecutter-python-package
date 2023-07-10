@@ -51,7 +51,7 @@ jobs:
 
     - name: Test with coverage
       run: |
-        hatch run cov --cov-report xml:coverage.xml
+        hatch run test --cov-report xml:coverage.xml
 {% if cookiecutter.documentation_website|lower != "no" %}
 
   publish-docs:
@@ -65,7 +65,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: 3.11
 
       - name: Install dependencies
         run: |

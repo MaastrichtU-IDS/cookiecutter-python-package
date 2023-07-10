@@ -10,13 +10,13 @@ like this see this [list of alternatives templates](https://cookiecutter-pypacka
 
 1. Install `cookiecutter` with:
 
-```shell
-pip install cookiecutter
+```bash
+pipx install cookiecutter
 ```
 
 2. Run `cookiecutter` with:
 
-```shell
+```bash
 cookiecutter https://github.com/MaastrichtU-IDS/cookiecutter-python-package
 ```
 
