@@ -95,9 +95,15 @@ python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
 
 ## TOOLS
+[tool.hatch.build]
+sources = ["src"]
+
 [tool.hatch.version]
 path = "src/{{cookiecutter.module_name}}/__init__.py"
 
+# If you need to import packages from git URLs
+# [tool.hatch.metadata]
+# allow-direct-references = true
 
 [tool.coverage.run]
 source = ["src"]
