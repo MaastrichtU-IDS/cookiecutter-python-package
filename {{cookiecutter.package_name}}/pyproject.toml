@@ -145,14 +145,14 @@ filterwarnings = [
 [tool.black]
 color = true
 line-length = 120
-target-version = ['py37']
+target-version = ['py38']
 skip-string-normalization = false
 
 
 # https://github.com/charliermarsh/ruff#supported-rules
 [tool.ruff]
 src = ["src", "tests"]
-target-version = "py37"
+target-version = "py38"
 line-length = 120
 select = [
     "I",     # isort
@@ -189,3 +189,6 @@ ignore = [
 
 [tool.ruff.per-file-ignores]
 "__init__.py" = ["I", "F401"] # module imported but unused
+
+[tool.ruff.mccabe]
+max-complexity = 10
