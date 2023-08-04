@@ -17,5 +17,5 @@ Create a `main.py` file to declare the API, you can provide a different folder t
 from {{cookiecutter.module_name}} import Api
 
 api = API()
-print(api.get_hello_world())
+print(api.hello_world("everyone"))
 ```

@@ -5,10 +5,11 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}}.svg?logo=pypi&label=PyPI&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}}.svg?logo=python&label=Python&logoColor=silver)](https://pypi.org/project/{{cookiecutter.package_name}}/)
 [![license](https://img.shields.io/pypi/l/{{cookiecutter.package_name}}.svg?color=%2334D058)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/blob/main/LICENSE.txt)
-[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 [![Test package](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml)
 [![Publish package](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml)
+
+[![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg){ loading=lazy .off-glb }](https://github.com/pypa/hatch) [![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json){ loading=lazy .off-glb }](https://github.com/astral-sh/ruff) [![code style - Black](https://img.shields.io/badge/code%20style-black-000000.svg){ loading=lazy .off-glb }](https://github.com/psf/black) [![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg){ loading=lazy .off-glb }](https://github.com/python/mypy)
 
 </div>
 

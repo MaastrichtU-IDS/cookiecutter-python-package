@@ -3,8 +3,34 @@ on: [push, pull_request, workflow_call, workflow_dispatch]
 
 jobs:
 
-  CodeQL-Analysis:
-    name: CodeQL analysis
+  tests:
+    name: ✅ Run tests
+    runs-on: {{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
+
+    - name: Install dependencies
+      run: |
+        pipx install hatch
+
+    - name: Test with coverage
+      run: |
+        hatch run test
+
+
+  codeql:
+    name: 🔎 CodeQL analysis
     runs-on: ubuntu-latest
     permissions:
       security-events: write # required for all workflows
@@ -28,34 +54,9 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
 
-
-  tests:
-    name: Run tests
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Python ${{ "{{" }} matrix.python-version {{ "}}" }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
-
-    - name: Install dependencies
-      run: |
-        pipx install hatch
-
-    - name: Test with coverage
-      run: |
-        hatch run test --cov-report xml:coverage.xml
 {% if cookiecutter.documentation_website|lower != "no" %}
-
   publish-docs:
-    name: Update documentation website
+    name: 📖 Update documentation website
     if: github.ref == 'refs/heads/main'
     needs: [tests, CodeQL-Analysis]
     runs-on: ubuntu-latest

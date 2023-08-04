@@ -2,29 +2,27 @@ import typer
 
 from {{cookiecutter.module_name}} import __version__
 from {{cookiecutter.module_name}}.api import Api
+from {{cookiecutter.module_name}}.settings import BOLD, CYAN, END, Settings, parse_settings
 
 cli = typer.Typer()
-
-# Variables to make the prints gorgeous:
-BOLD = "\033[1m"
-END = "\033[0m"
-GREEN = "\033[32m"
-# RED = '\033[91m' YELLOW = '\033[33m' CYAN = '\033[36m' PURPLE = '\033[95m' BLUE = '\033[34m'
 
 
 @cli.command("hello")
 def cli_hello(
     name: str = typer.Argument("World", help="Who to greet"),
+    settings: str = typer.Option(None, help="Path to the settings file"),
     output: str = typer.Option(None, help="Path to the output file"),
     verbose: bool = typer.Option(True, help="Display logs"),
 ) -> None:
-    api = Api()
-    print(api.get_hello_world(name))
+    conf = parse_settings(settings) if settings else Settings()
+    api = Api(conf)
     if output:
         if verbose:
-            print(f"Writing to file {BOLD}{GREEN}{output}{END}")
+            print(f"Writing to file {BOLD}{CYAN}{output}{END}")
         with open(output, "w") as file:
-            file.write(api.get_hello_world(name))
+            file.write(api.hello_world(name))
+    else:
+        print(api.hello_world(name))
 
 
 @cli.command("version")

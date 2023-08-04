@@ -29,7 +29,9 @@ classifiers = [
 ]
 dynamic = ["version"]
 
-dependencies = [{% if cookiecutter.command_line_interface|lower != "no" %}
+dependencies = [
+    "requests",
+    "PyYAML",{% if cookiecutter.command_line_interface|lower != "no" %}
     "typer >=0.6.0",{% endif %}
 ]
 
@@ -44,6 +46,9 @@ test = [
     "pytest-cov >=3.0.0",
     "pre-commit >=3.3.0",
     "mypy >=1.4.1",
+    "pip-tools",
+    "types-requests",
+    "types-PyYAML",
 ]{% if cookiecutter.documentation_website|lower != "no" %}
 doc = [
     "mkdocs >=1.4.2",
@@ -51,6 +56,7 @@ doc = [
     "mkdocstrings[python] >=0.19.1",
     "mdx-include >=1.4.1",
     "mkdocs-markdownextradata-plugin >=0.2.5",
+    "mkdocs-open-in-new-tab",
 ]{% endif %}
 
 
@@ -83,12 +89,17 @@ test = [
     "pytest {args}",
 ]
 cov = [
+    "fmt",
     "pytest --cov-report html {args}",
+]
+cov-check = [
     "python -c 'import webbrowser; webbrowser.open(\"http://0.0.0.0:3000\")'",
     "python -m http.server 3000 --directory ./htmlcov",
-]{% if cookiecutter.documentation_website|lower != "no" %}
+]
+{% if cookiecutter.documentation_website|lower != "no" %}
 docs = "mkdocs serve -a localhost:8001"
-{% endif %}
+{% endif %}compile = "pip-compile -o requirements.txt pyproject.toml"
+
 
 [[tool.hatch.envs.all.matrix]]
 python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
@@ -131,8 +142,8 @@ disallow_any_generics = true
 
 [tool.pytest.ini_options]
 addopts = [
-    "-vvv",
-    "--cov=src",
+    "-vvv",          # Verbose level 3
+    "--durations=0", # Show all tests durations
     "--color=yes",
     "--cov-report=term-missing",
     # "--cov-fail-under=85",

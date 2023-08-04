@@ -1,8 +1,6 @@
 [![Version](https://img.shields.io/pypi/v/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Python versions](https://img.shields.io/pypi/pyversions/{{cookiecutter.package_name}})](https://pypi.org/project/{{cookiecutter.package_name}}) [![Pull requests welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/fork)
 
-[![Run tests](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/tests.yml) [![CodeQL](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/codeql-analysis.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={{cookiecutter.github_username}}_{{cookiecutter.package_name}}&metric=coverage)](https://sonarcloud.io/dashboard?id={{cookiecutter.github_username}}_{{cookiecutter.package_name}})
-
-[![Publish to PyPI](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml) [![Publish docs](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml)
+[![Run tests](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml) [![Publish to PyPI](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml)
 
 
 
@@ -14,159 +12,147 @@ Clone the repository and go in the project folder:
 git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}
 cd {{cookiecutter.package_name}}
 ```
+[![Version](https://img.shields.io/pypi/v/libre-chat)](https://pypi.org/project/libre-chat) [![Python versions](https://img.shields.io/pypi/pyversions/libre-chat)](https://pypi.org/project/libre-chat) [![Image size](https://ghcr-badge.egpl.dev/vemonet/libre-chat/size)](https://github.com/vemonet/libre-chat/pkgs/container/libre-chat) [![Pull requests welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen)](https://github.com/vemonet/libre-chat/fork)
 
-To install the project for development you can either use [`venv`](https://docs.python.org/3/library/venv.html) to create a virtual environment yourself, or use [`hatch`](https://hatch.pypa.io) to automatically handle virtual environments for you.
+[![Publish package](https://github.com/vemonet/libre-chat/actions/workflows/release.yml/badge.svg)](https://github.com/vemonet/libre-chat/actions/workflows/release.yml) [![Test package](https://github.com/vemonet/libre-chat/actions/workflows/test.yml/badge.svg)](https://github.com/vemonet/libre-chat/actions/workflows/test.yml)
 
-=== "venv"
+[![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg){ loading=lazy .off-glb }](https://github.com/pypa/hatch) [![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json){ loading=lazy .off-glb }](https://github.com/astral-sh/ruff) [![code style - Black](https://img.shields.io/badge/code%20style-black-000000.svg){ loading=lazy .off-glb }](https://github.com/psf/black) [![types - Mypy](https://img.shields.io/badge/types-Mypy-blue.svg){ loading=lazy .off-glb }](https://github.com/python/mypy)
 
-    Create the virtual environment in the project folder :
 
-    ```bash
-    python3 -m venv .venv
-    ```
+## 📥 Install for development
 
-    Activate the virtual environment:
+Clone the repository and go to the project folder:
 
-    ```bash
-    source .venv/bin/activate
-    ```
+```bash
+git clone https://github.com/vemonet/libre-chat
+cd libre-chat
+```
 
-    Install all dependencies required for development:
+For development we use [Hatch](https://hatch.pypa.io), it will automatically handle virtual environments, and make sure all dependencies are installed when you run a script in the project. Install it with `pipx` or `pip`:
 
-    ```bash
-    pip install -e ".[dev,doc,test]"
-    ```
+```bash
+pipx install hatch
+```
 
-    Install `pre-commit` to enable automated formatting and linting of the code at each commit:
+??? info "Optionally you can enable `hatch` terminal completion"
 
-    ```bash
-    pre-commit install
-    ```
-
-=== "hatch"
-
-    Install [Hatch](https://hatch.pypa.io), this will automatically handle virtual environments and make sure all dependencies are installed when you run a script in the project:
+    See the [official documentation](https://hatch.pypa.io/latest/cli/about/#tab-completion) for more details. For ZSH you can run these commands:
 
     ```bash
-    pip install hatch
+    _HATCH_COMPLETE=zsh_source hatch > ~/.hatch-complete.zsh
+    echo ". ~/.hatch-complete.zsh" >> ~/.zshrc
     ```
-
-    ??? note "Optionally you can improve `hatch` terminal completion"
-
-        See the [official documentation](https://hatch.pypa.io/latest/cli/about/#tab-completion) for more details. For ZSH you can run these commands:
-
-        ```bash
-        _HATCH_COMPLETE=zsh_source hatch > ~/.hatch-complete.zsh
-        echo ". ~/.hatch-complete.zsh" >> ~/.zshrc
-        ```
 
 
 ## 🧑‍💻 Development workflow
 
-=== "venv"
+Start a conversational chat web service, without vectorstore:
 
-    Try to sign a nanopublication with the code defined in `scripts/dev.py` to test your changes:
+```bash
+hatch run dev
+```
 
-    ```bash
-    ./scripts/dev.sh
-    ```
+Start a documents-based question answering service, using a vectorstore:
 
-    The code will be automatically formatted when you commit your changes using `pre-commit`. But you can also run the script to format the code yourself:
+```bash
+hatch run vector
+```
 
-    ```bash
-    ./scripts/format.sh
-    ```
+Use the CLI to build a vectorstore at a specific path:
 
-    Check the code for errors, and if it is in accordance with the PEP8 style guide, by running `flake8` and `mypy`:
-
-    ```bash
-    ./scripts/lint.sh
-    ```
-
-=== "hatch"
-
-    Try to sign a nanopublication with the code defined in `scripts/dev.py` to test your changes:
-
-    ```bash
-    hatch run dev
-    ```
-
-    The code will be automatically formatted when you commit your changes using `pre-commit`. But you can also run the script to format the code yourself:
-
-    ```bash
-    hatch run format
-    ```
-
-    Check the code for errors, and if it is in accordance with the PEP8 style guide, by running `flake8` and `mypy`:
-
-    ```bash
-    hatch run lint
-    ```
-
+```bash
+hatch run libre-llm build --documents documents2 --vector vectorstore/db2
+```
 
 ## ✅ Run the tests
 
-[![Python application](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/test.yml){:target="_blank"}
+Make sure the existing tests still work by running the test suite, mypy, and linting checks. .
 
-Tests are automatically run by a GitHub Actions workflow when new code is pushed to the GitHub repository.
+Run the tests locally:
 
-The tests use the [```nanopub-java```](https://github.com/Nanopublication/nanopub-java) tool for validating the signing process implemented in python produces similar nanopublications. This is automatically installed by the library, just make sure `java` is available where you run the tests.
+```bash
+hatch run test
+```
 
-=== "venv"
+Run only a specific test, and display all logs:
 
-	Run the tests locally:
+```bash
+hatch run test tests/test_api.py::test_post_prompt_conversation -s
+```
 
-	```bash
-	./scripts/test.sh
-	```
+??? example "Run the tests on the different versions of python available on your machine"
 
-	You can also run only a specific test:
-
-	```bash
-	./scripts/test.sh tests/cli.py::test_cli
-	```
-
-=== "hatch"
-
-	Run the tests locally:
-
-	```bash
-	hatch run test
-	```
-
-	You can also run only a specific test:
-
-	```bash
-	hatch run test tests/cli.py::test_cli
-	```
-
-
-## 📖 Generate docs
-
-[![Publish docs](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/docs.yml){:target="_blank"}
-
-The documentation (this website) is automatically generated from the markdown files in the `docs` folder and python docstring comments, and published by a GitHub Actions workflow.
-
-Serve the docs on [http://localhost:8008](http://localhost:8008){:target="_blank"}
-
-=== "venv"
+    Not required as it is done by the GitHub Actions workflow, but can be useful for debugging:
 
     ```bash
-    ./scripts/docs.sh
+    hatch run all:test
     ```
 
-=== "hatch"
+## 📖 Generate the docs
 
-    ```bash
-    hatch run docs
-    ```
+The documentation (this website) is automatically generated and published by a GitHub Actions workflow from the markdown files in the `docs/` folder, and python `docstring` comments.
 
+To check the documentation website locally, serve it with:
+
+```bash
+hatch run docs
+```
+
+## ♻️ Reset the environment
+
+In case you are facing issues with dependencies not updating properly you can easily reset the virtual environment with:
+
+```bash
+hatch env prune
+```
+
+Manually trigger the installation of dependencies in a local virtual environment (done automatically when you run any script):
+
+```bash
+hatch -v env create
+```
+
+Enter a new shell with the environment activated:
+
+```bash
+hatch shell
+```
 
 ## 🏷️ Publish a new release
 
-[![Publish to PyPI](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml/badge.svg)](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}/actions/workflows/publish.yml){:target="_blank"}
+The deployment of new releases is done automatically by a GitHub Actions workflow when a new release is created on GitHub. To release a new version:
 
-1. Increment the `__version__` in `{{cookiecutter.module_name}}/__init__.py`
-2. Push to GitHub
-3. Create a new release on GitHub
-4. A GitHub Action workflow will automatically publish the new version to PyPI
+1. Make sure the `PYPI_TOKEN` secret has been defined in the GitHub repository (in Settings > Secrets > Actions). You can get an API token from PyPI at [pypi.org/manage/account](https://pypi.org/manage/account).
+
+2. Increment the `version` number in the `src/libre_chat/__init__.py` file:
+
+    ```bash
+    hatch version 0.1.0
+    # Or bump using semver: patch, minor, major
+    hatch version patch
+    ```
+
+3. Commit, push, and create a new release on GitHub, which will automatically trigger a workflow to publish the new release to PyPI.
+
+??? bug "Or perform the release locally"
+
+    1. Update the version:
+
+        ```bash
+        hatch version 0.1.0
+        # Or bump using semver: patch, minor, major
+        hatch version patch
+        ```
+
+    2. Build and publish:
+
+        ```bash
+        hatch build
+        hatch publish
+        ```
+
+    3. Create the release on GitHub, [manually](https://github.com/vemonet/libre-chat/releases/new) or with the [`gh` CLI](https://cli.github.com/):
+
+        ```bash
+        gh release create
+        ```
