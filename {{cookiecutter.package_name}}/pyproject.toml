@@ -44,7 +44,7 @@ dependencies = [
 test = [
     "pytest >=7.4.0",
     "pytest-cov >=3.0.0",
-    "pre-commit >=3.3.0",
+    "pre-commit",
     "mypy >=1.4.1",
     "pip-tools",
     "types-requests",
@@ -143,13 +143,14 @@ disallow_any_generics = true
 [tool.pytest.ini_options]
 addopts = [
     "-vvv",          # Verbose level 3
-    "--durations=0", # Show all tests durations
+    "--durations=10", # Show 10 slowest tests durations
+    "--cov=src",
     "--color=yes",
     "--cov-report=term-missing",
     # "--cov-fail-under=85",
 ]
 filterwarnings = [
-    "ignore::DeprecationWarning:httpx.*:"
+    "ignore::DeprecationWarning:httpx.*:",
 ]
 
 
@@ -191,15 +192,15 @@ select = [
 ]
 ignore = [
     "E501", # line too long
-    "B008", # do not perform function calls in argument defaults
-    "B006", # do not use mutable data structures for argument defaults
     "C901", # too complex
-    "S101", # Use of `assert` detected
-    "T201", "T203", # remove print and pprint
+    "T201", # do not use print
+    "B008", # do not perform function calls in argument defaults
 ]
 
 [tool.ruff.per-file-ignores]
 "__init__.py" = ["I", "F401"] # module imported but unused
+# Tests can use magic values, assertions, and relative imports
+"tests/**/*" = ["PLR2004", "S101", "S105", "TID252"]
 
 [tool.ruff.mccabe]
 max-complexity = 10

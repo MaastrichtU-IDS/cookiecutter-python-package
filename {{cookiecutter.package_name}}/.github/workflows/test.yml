@@ -5,7 +5,7 @@ jobs:
 
   tests:
     name: ✅ Run tests
-    runs-on: {{ matrix.os }}
+    runs-on: ${{ "{{" }} matrix.os {{ "}}" }}
     strategy:
       fail-fast: false
       matrix:
