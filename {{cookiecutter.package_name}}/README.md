@@ -17,10 +17,16 @@
 
 ## 📦️ Installation
 
-This package requires Python >=3.7, simply install it with:
+This package requires Python >=3.8, simply install it with:
 
 ```bash
 pip install {{cookiecutter.package_name}}
+```
+
+You can also install directly from the git repository:
+
+```bash
+pip install git+https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}.git
 ```
 
 ## 🪄 Usage
