@@ -9,7 +9,7 @@ def test_api():
 
 def test_parse_settings():
     """Test parsing YAML settings file"""
-    settings = parse_settings("tests/data/settings.yml")
+    settings = parse_settings("tests/resources/settings.yml")
     assert settings.greet == "everyone"
 
 
