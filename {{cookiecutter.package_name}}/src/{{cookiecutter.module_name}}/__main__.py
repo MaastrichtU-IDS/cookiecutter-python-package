@@ -11,7 +11,7 @@ cli = typer.Typer()
 def cli_hello(
     name: str = typer.Argument("World", help="Who to greet"),
     settings: str = typer.Option(None, help="Path to the settings file"),
-    output: str = typer.Option(None, help="Path to the output file"),
+    output: str = typer.Option(None, "-o", help="Path to the output file"),
     verbose: bool = typer.Option(True, help="Display logs"),
 ) -> None:
     conf = parse_settings(settings) if settings else Settings()
