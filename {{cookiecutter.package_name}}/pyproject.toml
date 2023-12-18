@@ -101,14 +101,18 @@ docs = "mkdocs serve -a localhost:8001"
 {% endif %}compile = "pip-compile -o requirements.txt pyproject.toml"
 
 
+# hatch run all:test
 [[tool.hatch.envs.all.matrix]]
 python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
 
 ## TOOLS
 
+[tool.hatch.build]
+packages = ["src/{{cookiecutter.module_name}}"]
 [tool.hatch.version]
 path = "src/{{cookiecutter.module_name}}/__init__.py"
+
 
 [tool.coverage.run]
 source = ["src"]
