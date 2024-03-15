@@ -22,7 +22,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pipx install hatch
+        pip install hatch
 
     - name: Test with coverage
       run: |

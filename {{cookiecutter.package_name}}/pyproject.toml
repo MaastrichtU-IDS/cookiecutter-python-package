@@ -206,6 +206,4 @@ max-complexity = 10
 # If you need to import packages from git URLs
 # [tool.hatch.metadata]
 # allow-direct-references = true
-# If you face issues with importing the modules in src/
-# [tool.hatch.build]
-# sources = ["src"]
+
